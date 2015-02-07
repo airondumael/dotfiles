@@ -65,6 +65,7 @@ set hlsearch
 set linebreak
 set nohidden
 highlight Search cterm=underline
+set autoread
 
 
 augroup CursorLineOnlyInActiveWindow
