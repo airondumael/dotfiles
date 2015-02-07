@@ -184,12 +184,35 @@ let g:multi_cursor_exit_from_insert_mode = 0
 " Vim-Airline
 " -------------------------------------------------------------------
 set laststatus=2
-"let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme             = 'powerlineish'
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_theme             = 'powerlineish'
+let g:airline_theme             = 'wombat'
 let g:airline_enable_branch     = 1
 let g:airline_enable_syntastic  = 1
+let g:airline_detect_modified = 1
 let g:airline_powerline_fonts = 1
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N ',
+      \ 'i'  : 'I ',
+      \ 'R'  : 'R ',
+      \ 'c'  : 'C ',
+      \ 'v'  : 'V ',
+      \ 'V'  : 'V ',
+      \ '' : 'V ',
+      \ 's'  : 'S ',
+      \ 'S'  : 'S ',
+      \ '' : 'S ',
+      \ }
 
+" -------------------------------------------------------------------
+"  Git Gutter
+"  ------------------------------------------------------------------
+let g:gitgutter_signs = 1
+let g:gitgutter_escape_grep = 1
+let g:gitgutter_map_keys = 0
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
 " -------------------------------------------------------------------
 "  Enable overiding with ~/.vimrc.local
 "  ------------------------------------------------------------------
