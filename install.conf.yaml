@@ -5,7 +5,6 @@
     ~/.zshrc: zshrc 
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
-    ~/.osx: osx
     ~/.vim: vim
 - shell: 
     - git submodule update --init --recursive
