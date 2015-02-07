@@ -7,14 +7,13 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
-
 "--------------------------------------------------------------------
 syntax on
 set showmatch
 set go-=L
 set guioptions-=T
 set guioptions-=r
-set linespace=18
+set linespace=8
 set showmode
 set mouse=a
 set colorcolumn=80,100,120
@@ -86,7 +85,7 @@ else
     colorscheme lizard256
 endif
 
-set guifont=Sauce\ Code\ Powerline:16
+set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 
 filetype plugin indent on " enable file type detection
 set autoindent
@@ -181,6 +180,15 @@ nmap <leader><leader>k <Plug>(easymotion-k)
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
 
+"--------------------------------------------------------------------
+" Vim-Airline
+" -------------------------------------------------------------------
+set laststatus=2
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme             = 'powerlineish'
+let g:airline_enable_branch     = 1
+let g:airline_enable_syntastic  = 1
+let g:airline_powerline_fonts = 1
 
 " -------------------------------------------------------------------
 "  Enable overiding with ~/.vimrc.local

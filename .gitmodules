@@ -43,3 +43,6 @@
 [submodule "misc/fonts"]
 	path = misc/fonts
 	url = https://github.com/powerline/fonts
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = git@github.com:bling/vim-airline.git
