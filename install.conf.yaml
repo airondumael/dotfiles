@@ -1,2 +1,4 @@
+- clean: []
 - link:
     ~/.vimrc: vimrc
+- shell: []
