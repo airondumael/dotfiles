@@ -93,3 +93,6 @@
 # Allow local customizations in the .gitconfig_local file
 [include]
 	path = ~/.gitconfig.local
+[user]
+	name = airondumael
+	email = airon.dumael@gmail.com
