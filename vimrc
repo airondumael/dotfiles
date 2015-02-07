@@ -181,3 +181,11 @@ nmap <leader><leader>k <Plug>(easymotion-k)
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
 
+
+" -------------------------------------------------------------------
+"  Enable overiding with ~/.vimrc.local
+"  ------------------------------------------------------------------
+let $LOCALFILE=expand("~/.vimrc.local")
+if filereadable($LOCALFILE)
+    source $LOCALFILE
+endif
