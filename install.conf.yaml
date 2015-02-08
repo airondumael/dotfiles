@@ -2,9 +2,9 @@
 - link:
     ~/.vimrc: vimrc
     ~/.oh-my-zsh: oh-my-zsh
-    ~/.zshrc: zshrc 
+    ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.vim: vim
-- shell: 
+- shell:
     - git submodule update --init --recursive

@@ -20,6 +20,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
+# Enable change ui color hotkey cmd+alt+ctrl+t
+ sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
+
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
@@ -126,7 +129,7 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 ###############################################################################
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
-defaults write com.apple.finder QuitMenuItem -bool false 
+defaults write com.apple.finder QuitMenuItem -bool false
 
 # Finder: disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
@@ -138,7 +141,7 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desk
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false 
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
@@ -272,7 +275,7 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 defaults write com.apple.dock expose-group-by-app -bool false
 
 # Disable Dashboard
-defaults write com.apple.dashboard mcx-disabled -bool false 
+defaults write com.apple.dashboard mcx-disabled -bool false
 
 # Don’t show Dashboard as a Space
 defaults write com.apple.dock dashboard-in-overlay -bool true
@@ -286,7 +289,7 @@ defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool false 
+defaults write com.apple.dock autohide -bool false
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
