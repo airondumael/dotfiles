@@ -42,6 +42,7 @@ brew install homebrew/dupes/openssh
 brew install php56
 brew install php56-mongo
 brew install php56-mcrypt
+brew install mongo
 
 # Install font tools.
 brew tap bramstein/webfonttools
