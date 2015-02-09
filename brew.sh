@@ -19,6 +19,8 @@ brew upgrade
 brew install coreutils
 sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 
+# Install CMake
+brew install cmake
 # Install ag the_silver_searcher
 brew install the_silver_searcher
 
@@ -33,10 +35,13 @@ brew install gnu-sed --with-default-names
 brew install wget --with-iri
 
 # Install more recent versions of some OS X tools.
-brew install macvim --env-std --override-system-vi
+brew install macvim --env-std --override-system-vim
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
-brew install homebrew/php/php55 --with-gmp
+#brew install homebrew/php/php55 --with-gmp
+brew install php56
+brew install php56-mongo
+brew install php56-mcrypt
 
 # Install font tools.
 brew tap bramstein/webfonttools
