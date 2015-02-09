@@ -35,6 +35,7 @@ brew install gnu-sed --with-default-names
 brew install wget --with-iri
 
 # Install more recent versions of some OS X tools.
+brew install python
 brew install macvim --env-std --override-system-vim
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
