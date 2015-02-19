@@ -34,6 +34,10 @@ brew install gnu-sed --with-default-names
 # Install `wget` with IRI support.
 brew install wget --with-iri
 
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap homebrew/homebrew-php
+
 # Install more recent versions of some OS X tools.
 brew install python
 brew install macvim --env-std --override-system-vim
