@@ -146,6 +146,10 @@ set wildignore+=*/.sass-cache/**
 set so=999
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
+" ---------------------------------------------------------------------
+"  Goyo
+"  --------------------------------------------------------------------
+
 
 " ---------------------------------------------------------------------
 "  Syntastic
@@ -193,7 +197,7 @@ let g:multi_cursor_exit_from_insert_mode = 0
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_theme             = 'powerlineish'
-let g:airline_theme             = 'wombat'
+"let g:airline_theme             = 'wombat'
 let g:airline_enable_branch     = 1
 let g:airline_enable_syntastic  = 1
 let g:airline_detect_modified = 1
