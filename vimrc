@@ -142,6 +142,11 @@ set wildignore+=*/public/forum/**
 set wildignore+=*/.git/**
 set wildignore+=*/.sass-cache/**
 
+" always center cursor
+set so=999
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+
+
 " ---------------------------------------------------------------------
 "  Syntastic
 "  --------------------------------------------------------------------
