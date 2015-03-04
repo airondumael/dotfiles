@@ -1,0 +1,3 @@
+if [ -f ~/.functions.local ]; then
+    source ~/.functions.local
+fi

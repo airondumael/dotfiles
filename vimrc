@@ -66,7 +66,8 @@ set linebreak
 set nohidden
 highlight Search cterm=underline
 set autoread
-
+set ttyfast
+set lazyredraw
 
 augroup CursorLineOnlyInActiveWindow
     autocmd!

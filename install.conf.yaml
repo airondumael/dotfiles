@@ -6,5 +6,7 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.vim: vim
+    ~/.aliases: aliases
+    ~/.functions: functions
 - shell:
     - git submodule update --init --recursive
