@@ -16,7 +16,7 @@ set guioptions-=r
 set linespace=8
 set showmode
 set mouse=a
-set colorcolumn=80,100,120
+"set colorcolumn=80,100,120
 set clipboard=unnamed
 set undolevels=1000
 set history=1000
@@ -69,11 +69,11 @@ set autoread
 set ttyfast
 set lazyredraw
 
-augroup CursorLineOnlyInActiveWindow
-    autocmd!
-    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    autocmd WinLeave * setlocal nocursorline
-augroup END
+"augroup CursorLineOnlyInActiveWindow
+"    autocmd!
+"    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+"    autocmd WinLeave * setlocal nocursorline
+"augroup END
 
 " vim can autodetect this based on $TERM (e.g. 'xterm-256color')
 " but it can be set to force 256 colors
@@ -143,6 +143,15 @@ set wildignore+=*/public/forum/**
 set wildignore+=*/.git/**
 set wildignore+=*/.sass-cache/**
 
+" always center cursor
+set so=999
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+
+" ---------------------------------------------------------------------
+"  Goyo
+"  --------------------------------------------------------------------
+
+
 " ---------------------------------------------------------------------
 "  Syntastic
 "  --------------------------------------------------------------------
@@ -189,7 +198,7 @@ let g:multi_cursor_exit_from_insert_mode = 0
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_theme             = 'powerlineish'
-let g:airline_theme             = 'wombat'
+"let g:airline_theme             = 'wombat'
 let g:airline_enable_branch     = 1
 let g:airline_enable_syntastic  = 1
 let g:airline_detect_modified = 1
@@ -223,3 +232,7 @@ let $LOCALFILE=expand("~/.vimrc.local")
 if filereadable($LOCALFILE)
     source $LOCALFILE
 endif
+
+
+hi Normal ctermbg=none
+highlight NonText ctermbg=none
