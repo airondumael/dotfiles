@@ -147,7 +147,8 @@ set wildignore+=*/.sass-cache/**
 set so=999
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
-autocmd FileType javascript noremap <buffer>  <leader>w :w!<cr>:call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer> <leader>w :call JsBeautify()<cr> :w!<cr>
+
 
 " ---------------------------------------------------------------------
 "  Goyo
@@ -162,12 +163,14 @@ endfunction
 function! s:goyo_leave()
 endfunction
 
+let g:goyo_margin_top=2
+let g:goyo_margin_bottom=2
+let g:goyo_width=120
+
 autocmd! User GoyoEnter
 autocmd! User GoyoLeave
 autocmd  User GoyoEnter nested call <SID>goyo_enter()
 autocmd  User GoyoLeave nested call <SID>goyo_leave()
-
-
 
 " ---------------------------------------------------------------------
 "  Syntastic
