@@ -47,6 +47,8 @@ set splitright
 set showcmd
 set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
+set noswapfile
+set nobackup
 set encoding=utf-8
 set list " show unprintable characters
 set listchars=tab:▸\              " Char representing a tab
@@ -68,6 +70,20 @@ highlight Search cterm=underline
 set autoread
 set ttyfast
 set lazyredraw
+
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-r> :call NumberToggle()<cr>
+
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
 
 "augroup CursorLineOnlyInActiveWindow
 "    autocmd!
@@ -101,7 +117,7 @@ let g:mapleader = ","
 
 nnoremap ; :
 
-nmap <C-b> :NERDTreeToggle<cr>
+"nmap <C-b> :NERDTreeToggle<cr>
 
 nmap <leader>w :w!<cr>
 imap <leader>w <esc>:w!<cr>i
@@ -112,14 +128,26 @@ nnoremap j gj
 nnoremap k gk
 
 nmap <leader>m :b#<cr>
-nmap <leader>h <C-w>h
-nmap <leader>j <C-w>j
-nmap <leader>k <C-w>k
-nmap <leader>l <C-w>l
+map <C-j> :bp<cr>
+map <C-k> :bn<cr>
 nmap <left> <C-w>h
 nmap <down> <C-w>j
 nmap <up> <C-w>k
 nmap <right> <C-w>l
+
+
+" ----------------------------------------------------------------------
+" NerdTree
+" ---------------------------------------------------------------------
+
+" let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinSize=50
+
+nmap <silent> <C-b> :call g:WorkaroundNERDTreeToggle()<CR>
+
+function! g:WorkaroundNERDTreeToggle()
+  try | :NERDTreeToggle | catch | :NERDTree | endtry
+endfunction
 
 " ----------------------------------------------------------------------
 "  CtrlP

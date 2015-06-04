@@ -2,6 +2,7 @@
 
 # using :q when exiting terminal
 alias :q='exit'
+alias whouseport='sudo netstat -tulpn | grep'
 
 if [ -f ~/.aliases.local ]; then
     source ~/.aliases.local

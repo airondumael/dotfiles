@@ -82,3 +82,6 @@ export LANG=en_US.UTF-8
 
 source ~/.aliases
 source ~/.functions
+
+export CFLAGS=-Qunused-arguments
+export CPPFLAGS=-Qunused-arguments
