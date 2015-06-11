@@ -64,6 +64,9 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "vim/bundle/vim-bufonly"]
+	path = vim/bundle/vim-bufonly
+	url = https://github.com/schickling/vim-bufonly.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git

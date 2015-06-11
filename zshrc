@@ -83,9 +83,3 @@ export LANG=en_US.UTF-8
 source ~/.aliases
 source ~/.functions
 
-#export GOROOT='/go'
-export GOPATH='/go'
-export GOBIN='/go/bin'
-#export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export PATH=$PATH:/usr/local/Cellar/go/1.4.1/libexec/bin
-export PATH=$PATH:$GOBIN
