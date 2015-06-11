@@ -3,6 +3,15 @@
 # using :q when exiting terminal
 alias :q='exit'
 
+alias nosleepnet="ping -i 0.2 `netstat -nr | grep -m 1 '^default' | awk '{print $2;}'`"
+
+# python
+alias p='python'
+alias venv='source venv/bin/activate'
+
+
 if [ -f ~/.aliases.local ]; then
     source ~/.aliases.local
 fi
+
+
