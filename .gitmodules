@@ -9,16 +9,16 @@
 	url = git@github.com:tpope/vim-pathogen.git
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
-	url = git@github.com:kien/ctrlp.vim.git
+	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
-	url = git@github.com:mileszs/ack.vim.git
+	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
-	url = git@github.com:scrooloose/syntastic.git
+	url = https://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/tlib_vim"]
 	path = vim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
@@ -42,13 +42,13 @@
 	url = https://github.com/powerline/fonts
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
-	url = git@github.com:bling/vim-airline.git
+	url = https://github.com/bling/vim-airline.git
 [submodule "vim/bundle/vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
 [submodule "vim/bundle/tern_for_vim"]
 	path = vim/bundle/tern_for_vim
-	url = git@github.com:marijnh/tern_for_vim.git
+	url = https://github.com/marijnh/tern_for_vim.git
 [submodule "misc/iTerm2-wombat"]
 	path = misc/iTerm2-wombat
 	url = https://github.com/djoyner/iTerm2-wombat.git
@@ -57,7 +57,7 @@
 	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "vim/bundle/goyo.vim"]
 	path = vim/bundle/goyo.vim
-	url = git@github.com:junegunn/goyo.vim.git
+	url = https://github.com/junegunn/goyo.vim.git
 [submodule "vim/bundle/vim-jsbeautify"]
 	path = vim/bundle/vim-jsbeautify
 	url = https://github.com/maksimr/vim-jsbeautify.git
@@ -73,3 +73,6 @@
 [submodule "vim/bundle/neosnippet.vim"]
 	path = vim/bundle/neosnippet.vim
 	url = https://github.com/Shougo/neosnippet.vim
+[submodule "goyo.vim"]
+	path = goyo.vim
+	url = https://github.com/junegunn/goyo.vim.git
