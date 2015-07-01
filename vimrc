@@ -104,12 +104,8 @@ let g:mapleader = ","
 nnoremap ; :
 
 nmap <C-b> :NERDTreeToggle<cr>
-<<<<<<< HEAD
 
 map <leader>bd :BufOnly<cr>
-
-=======
->>>>>>> 5946479b359fc10c302cfa07a66117f7da70527a
 
 nmap <leader>w :w!<cr>
 imap <leader>w <esc>:w!<cr>i
@@ -131,7 +127,6 @@ nmap <right> <C-w>l
 
 nmap <leader>t :set ts=2 sts=2 noet<cr>:retab!<cr>:set ts=4 sts=4 et<cr>:retab<cr>
 
-<<<<<<< HEAD
 " ----------------------------------------------------------------------
 " GoDoc
 " ---------------------------------------------------------------------
@@ -153,16 +148,13 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
-=======
 " VIM GO
 "
->>>>>>> 5946479b359fc10c302cfa07a66117f7da70527a
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-<<<<<<< HEAD
 
 let g:go_fmt_command = "goimports"
 
@@ -176,10 +168,8 @@ let g:go_play_open_browser = 0 "1 to enable
 " ----------------------------------------------------------------------
 " NerdTree
 " ---------------------------------------------------------------------
-=======
 let g:go_fmt_command = "goimports"
 let g:go_bin_path = '/usr/local/bin'
->>>>>>> 5946479b359fc10c302cfa07a66117f7da70527a
 
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
