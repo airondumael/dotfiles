@@ -4,9 +4,20 @@
 alias :q='exit'
 alias whouseport='sudo netstat -tulpn | grep'
 
+<<<<<<< HEAD
 # youtube-dl extract mp3
 alias youtube-mp3='youtube-dl --extract-audio --audio-format mp3'
+=======
+alias nosleepnet="ping -i 0.2 `netstat -nr | grep -m 1 '^default' | awk '{print $2;}'`"
+
+# python
+alias p='python'
+alias venv='source venv/bin/activate'
+
+>>>>>>> 5946479b359fc10c302cfa07a66117f7da70527a
 
 if [ -f ~/.aliases.local ]; then
     source ~/.aliases.local
 fi
+
+

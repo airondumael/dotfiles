@@ -83,8 +83,11 @@ export LANG=en_US.UTF-8
 source ~/.aliases
 source ~/.functions
 
+<<<<<<< HEAD
 export CFLAGS=-Qunused-arguments
 export CPPFLAGS=-Qunused-arguments
 export GOPATH=~/go
 export GOBIN=~/go/bin
 export PATH=$PATH:GOBIN
+=======
+>>>>>>> 5946479b359fc10c302cfa07a66117f7da70527a

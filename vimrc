@@ -16,7 +16,7 @@ set guioptions-=r
 set linespace=8
 set showmode
 set mouse=a
-"set colorcolumn=80,100,120
+set colorcolumn=80,100,120
 set clipboard=unnamed
 set undolevels=1000
 set history=1000
@@ -47,8 +47,6 @@ set splitright
 set showcmd
 set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
-set noswapfile
-set nobackup
 set encoding=utf-8
 set list " show unprintable characters
 set listchars=tab:▸\              " Char representing a tab
@@ -70,20 +68,6 @@ highlight Search cterm=underline
 set autoread
 set ttyfast
 set lazyredraw
-
-
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber
-  endif
-endfunc
-
-nnoremap <C-r> :call NumberToggle()<cr>
-
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
 
 "augroup CursorLineOnlyInActiveWindow
 "    autocmd!
@@ -108,6 +92,8 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 filetype plugin indent on " enable file type detection
 set autoindent
 
+autocmd BufWritePre * :%s/\s\+$//e
+
 " ---------------------------------------------------------------------
 "  Mappings
 "  --------------------------------------------------------------------
@@ -118,9 +104,12 @@ let g:mapleader = ","
 nnoremap ; :
 
 nmap <C-b> :NERDTreeToggle<cr>
+<<<<<<< HEAD
 
 map <leader>bd :BufOnly<cr>
 
+=======
+>>>>>>> 5946479b359fc10c302cfa07a66117f7da70527a
 
 nmap <leader>w :w!<cr>
 imap <leader>w <esc>:w!<cr>i
@@ -131,14 +120,18 @@ nnoremap j gj
 nnoremap k gk
 
 nmap <leader>m :b#<cr>
-map <C-j> :bp<cr>
-map <C-k> :bn<cr>
+nmap <leader>h <C-w>h
+nmap <leader>j <C-w>j
+nmap <leader>k <C-w>k
+nmap <leader>l <C-w>l
 nmap <left> <C-w>h
 nmap <down> <C-w>j
 nmap <up> <C-w>k
 nmap <right> <C-w>l
 
+nmap <leader>t :set ts=2 sts=2 noet<cr>:retab!<cr>:set ts=4 sts=4 et<cr>:retab<cr>
 
+<<<<<<< HEAD
 " ----------------------------------------------------------------------
 " GoDoc
 " ---------------------------------------------------------------------
@@ -160,11 +153,16 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
+=======
+" VIM GO
+"
+>>>>>>> 5946479b359fc10c302cfa07a66117f7da70527a
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+<<<<<<< HEAD
 
 let g:go_fmt_command = "goimports"
 
@@ -178,16 +176,31 @@ let g:go_play_open_browser = 0 "1 to enable
 " ----------------------------------------------------------------------
 " NerdTree
 " ---------------------------------------------------------------------
+=======
+let g:go_fmt_command = "goimports"
+let g:go_bin_path = '/usr/local/bin'
+>>>>>>> 5946479b359fc10c302cfa07a66117f7da70527a
 
-" let g:NERDTreeWinPos = "right"
-let g:NERDTreeWinSize=50
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
 
-nmap <silent> <C-b> :call g:WorkaroundNERDTreeToggle()<CR>
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
-function! g:WorkaroundNERDTreeToggle()
-  try | :NERDTreeToggle | catch | :NERDTree | endtry
-endfunction
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+
+
+au FileType go nmap <Leader>s <Plug>(go-implements)
+
+au FileType go nmap <Leader>i <Plug>(go-info)
+
+au FileType go nmap <Leader>e <Plug>(go-rename)
 " ----------------------------------------------------------------------
 "  CtrlP
 "  ---------------------------------------------------------------------
