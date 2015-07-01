@@ -85,3 +85,6 @@ source ~/.functions
 
 export CFLAGS=-Qunused-arguments
 export CPPFLAGS=-Qunused-arguments
+export GOPATH=~/go
+export GOBIN=~/go/bin
+export PATH=$PATH:GOBIN

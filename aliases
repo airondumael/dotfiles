@@ -4,6 +4,9 @@
 alias :q='exit'
 alias whouseport='sudo netstat -tulpn | grep'
 
+# youtube-dl extract mp3
+alias youtube-mp3='youtube-dl --extract-audio --audio-format mp3'
+
 if [ -f ~/.aliases.local ]; then
     source ~/.aliases.local
 fi
