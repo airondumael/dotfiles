@@ -1,2 +1,9 @@
-./vim/swap/*
-./vim/backup/*
+.DS_Store
+.netrwhist
+**/**/**/doc/tags
+vim/plugged
+vim/tmp/swap/*
+vim/tmp/backup/*
+
+
+!.gitkeep

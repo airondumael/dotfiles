@@ -1,0 +1,282 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'airblade/vim-gitgutter'
+Plug 'ajh17/Spacegray.vim'
+Plug 'danro/rename.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'danro/rename.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-scripts/kwbdi.vim'
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+Plug 'justincampbell/vim-eighties'
+Plug 'wincent/terminus'
+Plug 'nanotech/jellybeans.vim'
+Plug 'jaxbot/brolink.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+
+call plug#end()
+
+
+set noerrorbells
+set novisualbell
+set gcr=a:blinkon0 " Disable blinking cursor
+
+" Default color scheme
+set background=light
+colorscheme spacegray
+
+
+" easy reload of .vimrc
+map <C-r> :source ~/.vimrc<cr>
+
+syntax on
+set showmatch
+set go-=L
+set guioptions-=T
+set guioptions-=r
+set linespace=8
+set showmode
+set mouse=a
+set colorcolumn=80,100,120
+set undolevels=1000
+set history=1000
+set shell=/bin/zsh
+
+" code style
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set smarttab
+set expandtab
+set autoindent
+set foldenable
+set foldmethod=indent
+set foldlevelstart=99
+set wildmenu
+set number
+set ignorecase
+set smartcase
+set timeout timeoutlen=500 timeoutlen=0
+set splitbelow
+set showcmd
+
+" temporary
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+
+set nocompatible
+
+" Set encoding
+set encoding=utf-8
+
+" Prefer unix
+set fileformats=unix,dos,mac
+
+" Whitespace stuff
+set textwidth=80
+set backspace=indent,eol,start " Allow backspacing over everything in insert mode
+set formatoptions+=l
+au BufWinEnter * call matchadd('ErrorMsg', '\%>80v.\+', -1) " Column Marker
+au BufWritePre * :%s/\s\+$//e " Remove trailing whitespace
+
+" Tab completion
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+
+" Use modeline overrides
+set modeline
+set modelines=10
+
+" Use , (comma) as leader key
+let mapleader = ","
+let g:mapleader = ","
+
+nmap <C-b> :NERDTreeToggle<cr>
+
+nmap <leader>w :w!<cr>
+imap <leader>w <esc>:w!<cr>i
+nmap <leader>p :CtrlP<cr>
+nmap <leader>b :CtrlPBuffer<cr>
+
+nnoremap j gj
+nnoremap k gk
+
+nmap <left> <C-w>h
+nmap <down> <C-w>j
+nmap <up> <C-w>k
+nmap <right> <C-w>l
+
+nmap <leader>t :set ts=2 sts=2 noet<cr>:retab!<cr>:set ts=4 sts=4 et<cr>:retab<cr>
+
+" Load the plugin and indent settings for the detected filetype
+filetype plugin indent on
+
+" Autocomplete
+au FileType python set omnifunc=pythoncomplete#Complete
+au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+au FileType html set omnifunc=htmlcomplete#CompleteTags
+au FileType css set omnifunc=csscomplete#CompleteCSS
+
+" Sudo write
+cmap W! w !sudo tee % >/dev/null
+
+" Indent-aware paste
+nnoremap <leader>p p`[v`]=
+
+" Remember last location in file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+endif
+
+" Resize splits when the window is resized
+au VimResized * exe "normal! \<c-w>="
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Same when jumping around
+nnoremap g; g;zz
+nnoremap g, g,zz
+
+" Change case
+nnoremap <C-u> gUiw
+inoremap <C-u> <esc>gUiwea
+
+" Don't prompt when files are externally changed
+set autoread
+
+" Quicker window switching
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Copy to clipboard
+set clipboard=unnamed
+
+set scrolljump=5
+set wrap
+set incsearch
+set hlsearch
+set linebreak
+set nohidden
+
+highlight Search cterm=underline
+
+set autoread
+set ttyfast
+set lazyredraw
+
+set list " show unprintable characters
+set listchars=tab:▸\              " Char representing a tab
+set listchars+=extends:❯          " Char representing an extending line
+set listchars+=precedes:❮         " Char representing an extending line in the other direction
+set listchars+=nbsp:␣             " Non breaking space
+set listchars+=trail:·            " Show trailing spaces as dots
+set showbreak=↪                  " Show wraped lines with this char
+set fillchars+=vert:\             " Don't show pipes in vertical splits
+
+" Plugins
+
+" % to bounce from do to end etc.
+runtime! macros/matchit.vim
+map <tab> %
+
+
+" ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v(\.git|\.hg|\.svn|\.egg-info|build|dist|node_modules|bower_components)$',
+  \ 'file': '\v\.(pyc|DS_Store)$',
+  \ }
+let g:ctrlp_working_path_mode = ''
+
+nnoremap ; :
+
+" nerdtree
+nnoremap <C-b> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" syntastic
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_javascript_checkers=['eslint']
+
+
+" brolink.vim
+au BufWritePost *.scss :BLReloadCSS
+
+" ag
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+
+  " bind \ (backward slash) to grep shortcut
+  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+endif
+
+
+" FILETYPES
+
+" Make uses real tabs
+au FileType make set noexpandtab
+
+" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+
+" Add json syntax highlighting
+au BufNewFile,BufRead *.json set ft=javascript
+
+"--------------------------------------------------------------------
+" Vim-Airline
+" -------------------------------------------------------------------
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:Vairline#extensions#syntastic#enabled = 1
+let g:airline_detect_modified = 1
+let g:airline_powerline_fonts = 1
+
+" -------------------------------------------------------------------
+"  Git Gutter
+"  ------------------------------------------------------------------
+let g:gitgutter_signs = 1
+let g:gitgutter_escape_grep = 1
+let g:gitgutter_map_keys = 0
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
+let g:eighties_enabled = 1
+let g:eighties_minimum_width = 120
+let g:eighties_extra_width = 4 " Increase this if you want some extra room
+let g:eighties_compute = 1 " Disable this if you just want the minimum + extra
+
+" -------------------------------------------------------------------
+"  Enable overiding with ~/.vimrc.local
+"  ------------------------------------------------------------------
+let $LOCALFILE=expand("~/.vimrc.local")
+if filereadable($LOCALFILE)
+    source $LOCALFILE
+endif
+
+
+

@@ -1,0 +1,29 @@
+source $HOME/.dotfiles/zsh/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+
+# Load the theme.
+antigen theme theunraveler
+
+# Bundle
+antigen bundle aws
+antigen bundle brew
+antigen bundle npm
+antigen bundle git
+antigen bundle docker
+antigen bundle copydir
+antigen bundle copyfile
+antigen bundle colorize
+antigen bundle extract
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-completions src
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle redis-cli
+antigen bundle sudo
+antigen bundle web-search
+antigen bundle wd
+
+antigen apply
+
+source ~/.dotfiles/zsh/functions
+source ~/.dotfiles/zsh/aliases

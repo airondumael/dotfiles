@@ -1,3 +1,8 @@
+#
+
+
+# for local functions use functions.local
 if [ -f ~/.functions.local ]; then
     source ~/.functions.local
 fi
+
