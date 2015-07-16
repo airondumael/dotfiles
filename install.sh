@@ -6,13 +6,9 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-E='\033[1;30m[exists]'
-I='\033[1;32m[installed]'
-R='\033[0m'
-
 install () {
   if [ -e "$HOME/$2" ]; then
-    echo -e $2 $E$R
+    echo "linking $HOME/$2"
     read -p "Replace existing? (y/n) " -n 1
     echo
   fi
@@ -23,17 +19,15 @@ install () {
   echo
 }
 
-echo '\003[1:32m' setting osx '\003[0m'
 sh ./osx/osx.sh
 
-echo '\003[1:32m' Creating symbolic link '\003[0m'
 install vim .vim
 install vim/vimrc .vimrc
 install zsh/zshrc .zshrc
 install git/gitignore .gitignore
 install git/gitignore_global .gitignore_global
 
-echo '\003[1:32m' installing brew '\003[0m'
+echo "install brew"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 
@@ -43,7 +37,7 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
-echo '\003[1:32' tap and install '\003[0m'
+echo "tap && install formula"
 
 brew tap homebrew/dupes
 brew tap homebrew/versions
@@ -64,6 +58,7 @@ brew install \
     homebrew/dupes/grep \
     ack \
     git \
+    hub \
     imagemagick --with-webp \
     lua \
     lynx \
@@ -77,6 +72,7 @@ brew install \
     webkit2png \
     zopfli \
     aria2 \
+    caskroom/cask/brew-cask \
     node
 
 brew cask install \
@@ -87,6 +83,11 @@ brew cask install \
     iterm2 \
     steam \
     slack \
+    keepassx \
+    github \
+    vlc \
+    skype \
+    mplayerx \
     spectacle
 
 brew cleanup
