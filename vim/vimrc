@@ -22,7 +22,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-
+Plug 'suan/vim-instant-markdown'
 call plug#end()
 
 

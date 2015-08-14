@@ -73,6 +73,7 @@ brew install \
     zopfli \
     aria2 \
     caskroom/cask/brew-cask \
+    mplayer \
     node
 
 brew cask install \
@@ -88,6 +89,7 @@ brew cask install \
     vlc \
     skype \
     mplayerx \
+    spotify \
     spectacle
 
 brew cleanup
