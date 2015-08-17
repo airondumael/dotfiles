@@ -322,6 +322,7 @@ call <SID>X("htmlH6", s:foreground, "", "")
 
 call <SID>X("javaScriptBraces", s:light_red, "", "")
 call <SID>X("javaScriptParens", s:light_orange, "", "")
+call <SID>X("javaScriptIdentifier", s:red, "", "")
 call <SID>X("javaScriptFunction", s:cyan, "", "")
 call <SID>X("javaScriptConditional", s:strong_red, "", "")
 call <SID>X("javaScriptRepeat", s:light_magenta, "", "")
