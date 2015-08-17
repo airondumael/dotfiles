@@ -22,18 +22,18 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-Plug 'suan/vim-instant-markdown'
 Plug 'flazz/vim-colorschemes'
+Plug 'Raimondi/delimitMate'
+Plug 'Lokaltog/vim-easymotion'
 
 call plug#end()
-
 
 set noerrorbells
 set novisualbell
 set gcr=a:blinkon0 " Disable blinking cursor
 
 " Default color scheme
-set background=dark
+set background=light
 colorscheme rohan
 
 " easy reload of .vimrc
@@ -67,7 +67,7 @@ set wildmenu
 set number
 set ignorecase
 set smartcase
-set timeout timeoutlen=500 timeoutlen=0
+set timeout timeoutlen=500 ttimeoutlen=0
 set splitbelow
 set showcmd
 
@@ -99,13 +99,16 @@ set modelines=10
 
 " Use , (comma) as leader key
 let mapleader = ","
+let maplocalleader = ","
 let g:mapleader = ","
+
+" cut line
+imap <C-c> <CR><Esc>O
 
 nmap <C-b> :NERDTreeToggle<cr>
 
 nmap <leader>w :w!<cr>
 imap <leader>w <esc>:w!<cr>i
-nmap <leader>p :CtrlP<cr>
 nmap <leader>b :CtrlPBuffer<cr>
 
 nnoremap j gj
@@ -160,9 +163,10 @@ inoremap <C-u> <esc>gUiwea
 " Don't prompt when files are externally changed
 set autoread
 
-"
+" make control+a and control+e work like terminal
 cnoremap <C-a>  <Home>
 cnoremap <C-e>  <End>
+" easy buffers
 nmap <C-m> :bnext<CR>
 nmap <C-n> :bprev<CR>
 
@@ -171,6 +175,13 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" easymotion
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_smartsign_us = 1
+nmap s <Plug>(easymotion-s)
+nmap <leader><leader>j <Plug>(easymotion-j)
+nmap <leader><leader>k <Plug>(easymotion-k)
 
 " Copy to clipboard
 set clipboard=unnamed
