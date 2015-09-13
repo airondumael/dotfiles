@@ -332,6 +332,13 @@ call <SID>X("javascriptNull", s:red, "", "")
 call <SID>X("javascriptGlobal", s:blue, "", "")
 call <SID>X("javascriptStatement", s:strong_red, "", "")
 
+
+"vim-javascript
+call <SID>X("jsBrackets", s:light_red, "", "")
+call <SID>X("jsParens", s:light_orange, "", "")
+call <SID>X("jsBraces", s:light_red, "", "")
+call <SID>X("jsFuncBraces", s:red, "", "")
+
 " Delete Functions {{{
 delf <SID>X
 delf <SID>rgb
