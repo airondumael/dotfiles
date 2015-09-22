@@ -26,9 +26,14 @@ Plug 'flazz/vim-colorschemes'
 Plug 'Raimondi/delimitMate'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'pangloss/vim-javascript'
-Plug 'isRuslan/vim-es6'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'fatih/vim-go'
+Plug 'majutsushi/tagbar'
 
 call plug#end()
+
+let g:go_disable_autoinstall = 0
 
 set noerrorbells
 set novisualbell
@@ -90,7 +95,7 @@ set textwidth=120
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
 set formatoptions+=l
 "au BufWinEnter * call matchadd('ErrorMsg', '\%>120v.\+', -1) " Column Marker
-au BufWritePre * :%s/\s\+$//e " Remove trailing whitespace
+"au BufWritePre * :%s/\s\+$//e " Remove trailing whitespace
 
 " Tab completion
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
@@ -107,7 +112,6 @@ let g:mapleader = ","
 " cut line
 imap <C-c> <CR><Esc>O
 
-nmap <C-b> :NERDTreeToggle<cr>
 
 nmap <leader>w :w!<cr>
 imap <leader>w <esc>:w!<cr>i
@@ -146,6 +150,10 @@ endif
 
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
+
+autocmd FileType go set list
+autocmd FileType go set listchars=""
+autocmd FileType go set listchars=tab:\ \ 
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
@@ -231,6 +239,15 @@ nnoremap ; :
 nnoremap <C-b> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+"VimFiler
+"nmap <C-b> :VimFiler<cr>
+"let g:vimfiler_as_default_explorer = 1
+"let g:vimfiler_safe_mode_by_default = 0
+"let g:vimfiler_tree_leaf_icon = ' '
+"let g:vimfiler_tree_opened_icon = '▾'
+"let g:vimfiler_tree_closed_icon = '▸'
+"let g:vimfiler_enable_auto_cd = 1
+
 " syntastic
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_check_on_open=1
@@ -298,3 +315,31 @@ if filereadable($LOCALFILE)
     source $LOCALFILE
 endif
 
+
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }

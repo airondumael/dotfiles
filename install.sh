@@ -48,7 +48,7 @@ brew install coreutils
 sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 
 brew install \
-    macvim --override-system-vim \
+    macvim --with-override-system-vim \
     cmake \
     the_silver_searcher \
     moreutils \
@@ -73,7 +73,6 @@ brew install \
     zopfli \
     aria2 \
     caskroom/cask/brew-cask \
-    mplayer \
     node
 
 brew cask install \
@@ -85,7 +84,7 @@ brew cask install \
     steam \
     slack \
     keepassx \
-    github \
+    github-desktop \
     vlc \
     skype \
     mplayerx \
@@ -93,3 +92,6 @@ brew cask install \
     spectacle
 
 brew cleanup
+
+
+chsh -s $(which zsh)
